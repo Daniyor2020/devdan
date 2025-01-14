@@ -1,138 +1,86 @@
-
-import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { profile } from "./assets";
-
 
 function App() {
   return (
-    <div className='min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white dark:bg-gradient-to-b dark:from-gray-800 dark:to-gray-900'>
-      {/* Hero Section */}
-      <section className='min-h-screen relative flex flex-col justify-center items-center px-4 sm:px-6'>
-        <div className='absolute inset-0 overflow-hidden'>
-          <div className='absolute inset-0 bg-gradient-to-b from-blue-500/20 to-purple-500/20 mix-blend-multiply' />
+    <div className="min-h-screen flex flex-col justify-between items-center bg-gradient-to-b from-gray-900 to-gray-800 text-white">
+      {/* Header */}
+      <header className="w-full text-center py-4">
+        <h1 className="text-3xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+          Daniyor Boltaev
+        </h1>
+        <p className="text-gray-300 text-sm sm:text-lg mt-2">
+          Frontend Developer | React Enthusiast | Problem Solver
+        </p>
+      </header>
+
+      {/* Main Content */}
+      <main className="flex flex-col sm:flex-row justify-around items-center w-full max-w-5xl px-4 sm:px-8">
+        {/* Profile Section */}
+        <div className="flex flex-col items-center sm:w-1/3">
+          <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden border-4 border-white/20 shadow-lg">
+            <img
+              src={profile}
+              alt="Daniyor Boltaev"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="mt-4 flex gap-4">
+            <a
+              href="https://github.com/Daniyor2020"
+              className="p-2 rounded-full bg-white/10 hover:bg-blue-500 transition-colors"
+              aria-label="GitHub Profile"
+            >
+              <Github className="w-5 h-5 sm:w-6 sm:h-6" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/daniyor-boltaev-513abb32/"
+              className="p-2 rounded-full bg-white/10 hover:bg-blue-500 transition-colors"
+              aria-label="LinkedIn Profile"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
+            </a>
+            <a
+              href="mailto:dani.bolta87@gmail.com"
+              className="p-2 rounded-full bg-white/10 hover:bg-blue-500 transition-colors"
+              aria-label="Email"
+            >
+              <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
+            </a>
+          </div>
         </div>
 
-        <div className='relative max-w-5xl mx-auto text-center'>
-          <div className='mb-8'>
-            <div className='w-40 h-40 mx-auto rounded-full border-4 border-white/20 overflow-hidden'>
-              <img
-                src={profile}
-                alt='Profile'
-                className='w-full h-full object-cover'
-              />
-            </div>
-          </div>
-
-          <h1 className='text-5xl sm:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 dark:text-white'>
-            Daniyor Boltaev
-          </h1>
-
-          <p className='text-xl sm:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto'>
-            Transforming ideas into reality through innovative solutions and
-            creative thinking
+        {/* About Section */}
+        <div className="text-center sm:text-left sm:w-2/3 mt-8 sm:mt-0">
+          <h2 className="text-xl sm:text-2xl font-bold mb-4">About Me</h2>
+          <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+            I’m a frontend developer passionate about crafting intuitive and
+            visually engaging web experiences. With expertise in React,
+            TypeScript, and modern web technologies, I transform ideas into
+            seamless digital solutions.
           </p>
-
-          <div className='flex justify-center gap-6'>
-            <a
-              href='https://github.com/Daniyor2020'
-              className='p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors'
-              aria-label='GitHub Profile'
-            >
-              <Github className='w-6 h-6' />
-            </a>
-            <a
-              href='https://www.linkedin.com/in/daniyor-boltaev-513abb32/'
-              className='p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors'
-              aria-label='LinkedIn Profile'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              <Linkedin className='w-6 h-6' />
-            </a>
-            <a
-              href='mailto:dani.bolta87@gmail'
-              className='p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors'
-              aria-label='Email'
-            >
-              <Mail className='w-6 h-6' />
-            </a>
-          </div>
-
-          <div className='absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce'>
-            <ChevronDown className='w-8 h-8 text-gray-400' />
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section className='py-24 px-4 sm:px-6'>
-        <div className='max-w-5xl mx-auto'>
-          <div className='grid md:grid-cols-2 gap-12 items-center'>
-            <div>
-              <h2 className='text-3xl font-bold mb-6'>About Me</h2>
-              <div className='space-y-4 text-gray-300'>
-                <p>
-                  With over [X] years of experience in [field], I specialize in
-                  creating impactful solutions that drive results.
-                </p>
-                <p>
-                  My expertise includes [key skills], and I'm passionate about
-                  [interests/causes].
-                </p>
-              </div>
+          <div className="mt-4 grid grid-cols-2 gap-4 text-gray-200">
+            <div className="bg-white/10 p-4 rounded-lg shadow">
+              <h3 className="text-blue-400 font-bold text-lg">10+</h3>
+              <p>Projects Completed</p>
             </div>
-            <div className='grid grid-cols-2 gap-4'>
-              <div className='bg-white/5 p-6 rounded-lg'>
-                <h3 className='font-bold text-2xl text-blue-400 mb-2'>100+</h3>
-                <p className='text-gray-400'>Projects Completed</p>
-              </div>
-              <div className='bg-white/5 p-6 rounded-lg'>
-                <h3 className='font-bold text-2xl text-purple-400 mb-2'>10+</h3>
-                <p className='text-gray-400'>Years Experience</p>
-              </div>
-              <div className='bg-white/5 p-6 rounded-lg'>
-                <h3 className='font-bold text-2xl text-blue-400 mb-2'>50+</h3>
-                <p className='text-gray-400'>Happy Clients</p>
-              </div>
-              <div className='bg-white/5 p-6 rounded-lg'>
-                <h3 className='font-bold text-2xl text-purple-400 mb-2'>20+</h3>
-                <p className='text-gray-400'>Awards Won</p>
-              </div>
+            <div className="bg-white/10 p-4 rounded-lg shadow">
+              <h3 className="text-purple-400 font-bold text-lg">6+</h3>
+              <p>Years Experience</p>
             </div>
           </div>
         </div>
-      </section>
+      </main>
 
-      {/* Featured Work Section */}
-      <section className='py-24 px-4 sm:px-6 bg-black/20'>
-        <div className='max-w-5xl mx-auto'>
-          <h2 className='text-3xl font-bold mb-12 text-center'>
-            Featured Work
-          </h2>
-          <div className='grid md:grid-cols-3 gap-8'>
-            {[1, 2, 3].map((item) => (
-              <div
-                key={item}
-                className='group relative overflow-hidden rounded-lg'
-              >
-                <div className='aspect-w-16 aspect-h-9 bg-gray-800'>
-                  <div className='p-6'>
-                    <h3 className='text-xl font-bold mb-2'>Project {item}</h3>
-                    <p className='text-gray-400'>
-                      Brief description of the project and its impact
-                    </p>
-                  </div>
-                </div>
-                <div className='absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6'>
-                  <button className='bg-white/20 text-white px-4 py-2 rounded-full hover:bg-white/30 transition-colors'>
-                    View Project
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Footer */}
+      <footer className="text-center py-4">
+        <p className="text-gray-400 text-sm">
+          &copy; {new Date().getFullYear()} Daniyor Boltaev. All rights
+          reserved.
+        </p>
+      </footer>
     </div>
   );
 }
