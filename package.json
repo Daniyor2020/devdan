@@ -1,16 +1,15 @@
-{
+{  "homepage": "https://daniyor2020.github.io/devdan/",
   "name": "daniyor",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://daniyors-projects.github.io/devdan",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "lucide-react": "^0.344.0",
